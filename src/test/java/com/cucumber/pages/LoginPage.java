@@ -26,7 +26,7 @@ public class LoginPage {
 	
 	@FindBy(id="Logout")
 	@CacheLookup
-	WebElement linkLogout;
+	WebElement btnLogout;
 	
 	public void setUserName(String uname) {
 		txtEmail.clear();
@@ -39,6 +39,9 @@ public class LoginPage {
 	}
 	public void clickLogin() {
 		btnLogin.click();
+	}
+	public void clickLogout() {
+		btnLogout.click();
 	}
 	
 	
