@@ -13,9 +13,8 @@ import io.cucumber.java.en.*;
 //import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class LoginSteps {
-	public WebDriver driver;
-	public LoginPage lpg;
+public class LoginSteps extends BaseClass {
+	
 	@Given("User Launch Chrome browser")
 	public void user_launch_chrome_browser() {
 		WebDriverManager.chromedriver().setup();
