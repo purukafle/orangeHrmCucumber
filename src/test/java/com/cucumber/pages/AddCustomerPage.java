@@ -27,6 +27,11 @@ public class AddCustomerPage extends BaseClass {
 	By txtLastName=By.xpath("");
 	By txtAdminContent=By.xpath("");
 	By btnSave=By.xpath("");
+	public String getPageTitle() {
+		String title=driver.getTitle();
+		return title;
+	
+	}
 	public void clickOnCustomerMenu() {
 		driver.findElement(lnkCustomer_menu).click();
 	}
@@ -45,21 +50,68 @@ public class AddCustomerPage extends BaseClass {
 	}
 	public void setCustomerRole(String role) throws InterruptedException {
 		if(!role.equals("Vendors")) {
-			driver.findElement(txtCustomerRoles).click();
-			//WebElement.listitem;
-			Thread.sleep(3000);
+			driver.findElement(By.xpath(""));
+			
 		}
+		driver.findElement(txtCustomerRoles).click();
+		WebElement listitem;
+		Thread.sleep(3000);
+		if(role.equals("Administration")) {
+			listitem=driver.findElement(lstitemadminstrator);
+					
+			
+		}
+		else if (role.equals("Guest")){
+			listitem=driver.findElement(lstitemGuests);			
+			
+		}
+		else if (role.equals("Registered")) {
+			listitem=driver.findElement(lstitemRegistration);
+			
+		}
+		else if(role.equals("Vendors")) {
+			listitem=driver.findElement(lstitemVendors);
+		}
+		else {
+			listitem=driver.findElement(lstitemGuests);
+		}
+		listitem.click();
+		//thread.sleep();
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void setManagerOfVendor(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setGender(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setFirstName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setLastName(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setDob(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setCompanyContent(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void setAdminContent(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+	public void clickOnSave() {
+		// TODO Auto-generated method stub
+		
+	}
+		
 	
 	
 }
