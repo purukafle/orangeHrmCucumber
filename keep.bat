@@ -1,0 +1,1 @@
+cmd /k run-mvn-command_line.bat
