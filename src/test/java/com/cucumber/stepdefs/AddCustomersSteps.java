@@ -79,5 +79,38 @@ public class AddCustomersSteps extends BaseClass {
 				.contains("the new customer has been added successfully"));
 		sleepUntil(5);
 	}
+	
+	//Steps for search customers by EmailId
+
+	@When("click on customers Menu")
+	public void click_on_customers_menu() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Enter customer Email")
+	public void enter_customer_email() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Click on search button")
+	public void click_on_search_button() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("User should found email in the search table")
+	public void user_should_found_email_in_the_search_table() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("Close Browser")
+	public void close_browser() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
 
 }
