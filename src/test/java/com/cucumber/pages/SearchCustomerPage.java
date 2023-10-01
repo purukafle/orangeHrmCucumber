@@ -91,13 +91,13 @@ public class SearchCustomerPage {
 		txtEmail.sendKeys(email);
 	}
 
-	public void firstName(String firstName) {
+	public void setFirstName(String firstName) {
 		waithelper.WaitForElement(txtFirstName, 30);
 		txtFirstName.clear();
 		txtFirstName.sendKeys(firstName);
 	}
 
-	public void lastName(String lastName) {
+	public void setLastName(String lastName) {
 		waithelper.WaitForElement(txtFirstName, 30);
 		txtLastName.clear();
 		txtLastName.sendKeys(lastName);
@@ -113,7 +113,7 @@ public class SearchCustomerPage {
 		for(int i=1; i<getNoOfRows();i++) {
 			String emailid=table.findElement(By.xpath("")).getText();
 			System.out.println(emailid);
-			if(emailid.equals(emailid)) {
+			if(emailid.equals(email)) {
 				flag=true;
 			}
 			
@@ -121,6 +121,28 @@ public class SearchCustomerPage {
 		
 		return flag;
 	}
-	//1:15:58
+	public void clickSearch() {
+		btnSearch.click();
+		
+	}
+	public boolean searchCustomerByName(String Name) {
+		boolean flag=false;
+		for(int i=1;i<=getNoOfRows();i++) {
+			String name=table.findElement(By.xpath("")).getText();
+			String names[]=name.split(" ");
+			
+			if (names[0].equals("firstName")&& names[1].equals("lastName")) {
+				flag=true;
+				
+			}
+			
+		}
+		return flag;
+		
+		
+	}
+	
+	}
+	
+	
 
-}

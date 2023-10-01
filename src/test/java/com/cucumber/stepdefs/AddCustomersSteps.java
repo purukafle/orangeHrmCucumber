@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Sleeper;
 
 import com.cucumber.pages.AddCustomerPage;
 import com.cucumber.pages.LoginPage;
+import com.cucumber.pages.SearchCustomerPage;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,6 +16,7 @@ public class AddCustomersSteps extends BaseClass {
 	public WebDriver driver;
 	public LoginPage lpg;
 	public AddCustomerPage addcuspge;
+	public SearchCustomerPage search;
 //31 minutes
 
 	@Then("User can view Dashboard")
@@ -82,35 +84,42 @@ public class AddCustomersSteps extends BaseClass {
 	
 	//Steps for search customers by EmailId
 
-	@When("click on customers Menu")
-	public void click_on_customers_menu() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-
 	@When("Enter customer Email")
 	public void enter_customer_email() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		search=new SearchCustomerPage(driver);
+		search.searchCustomerByEmail("");
+	    
 	}
 
 	@When("Click on search button")
 	public void click_on_search_button() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    search.clickSearch();
+	    //thread.sleep
 	}
 
 	@Then("User should found email in the search table")
 	public void user_should_found_email_in_the_search_table() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	    boolean status=search.searchCustomerByEmail(" hhh@gmail.com");
+	    Assert.assertEquals(true, status);
+	}
+	
+	//Steps SearchCustomer by Name
+	@When("Enter customer FirstName")
+	public void enter_customer_first_name() {
+	    search.setFirstName("");
 	}
 
-	@Then("Close Browser")
-	public void close_browser() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@When("Enter Cuatomer Lastname")
+	public void enter_cuatomer_lastname() {
+	    search.setLastName("");
 	}
+
+	@Then("User should found Name in the search table")
+	public void user_should_found_name_in_the_search_table() {
+	  boolean status= search.searchCustomerByName("Name");
+	  Assert.assertEquals(true, status);
+	}
+	
 
 
 }
